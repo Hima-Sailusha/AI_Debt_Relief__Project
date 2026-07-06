@@ -1,6 +1,7 @@
 import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
+
 from backend.app.core.config import DATABASE_URL
 
 os.makedirs("database", exist_ok=True)
@@ -17,3 +18,12 @@ SessionLocal = sessionmaker(
 )
 
 Base = declarative_base()
+
+
+# Dependency for FastAPI
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
