@@ -1,6 +1,9 @@
+import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 from app.core.config import DATABASE_URL
+
+os.makedirs("database", exist_ok=True)
 
 engine = create_engine(
     DATABASE_URL,
