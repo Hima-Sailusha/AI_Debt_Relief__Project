@@ -1,5 +1,5 @@
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
+import Navbar from "../components/NavbarTemp";
+import Sidebar from "../components/SidebarTemp";
 
 function Dashboard() {
   return (
