@@ -7,7 +7,7 @@ import Loan from "./pages/Loan";
 import AIChat from "./pages/AIChat";
 import Settlement from "./pages/Settlement";
 import Letter from "./pages/Letter";
-import FinancialAnalysis from "./pages/analysis";
+import FinancialAnalysis from "./pages/Analysis";
 function App() {
   return (
     <BrowserRouter>
