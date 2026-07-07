@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Login from "./pages/LoginTemp";
-import Register from "./pages/RegisterTemp";
-import Dashboard from "./pages/DashboardTemp";
-import Loan from "./pages/LoanTemp";
-import AIChat from "./pages/AIChatTemp";
-import Settlement from "./pages/SettlementTemp";
-import Letter from "./pages/LetterTemp";
-import FinancialAnalysis from "./pages/AnalysisTemp";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
+import Loan from "./pages/Loan";
+import AIChat from "./pages/AIChat";
+import Settlement from "./pages/Settlement";
+import Letter from "./pages/Letter";
+import FinancialAnalysis from "./pages/Analysis";
 function App() {
   return (
     <BrowserRouter>
