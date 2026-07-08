@@ -4,12 +4,18 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 
 from backend.app.core.config import DATABASE_URL
 
-os.makedirs("database", exist_ok=True)
+# Create local database folder only for SQLite
+if DATABASE_URL.startswith("sqlite"):
+    os.makedirs("database", exist_ok=True)
 
-engine = create_engine(
-    DATABASE_URL,
-    connect_args={"check_same_thread": False}
-)
+# SQLite needs check_same_thread, PostgreSQL doesn't
+if DATABASE_URL.startswith("sqlite"):
+    engine = create_engine(
+        DATABASE_URL,
+        connect_args={"check_same_thread": False}
+    )
+else:
+    engine = create_engine(DATABASE_URL)
 
 SessionLocal = sessionmaker(
     autocommit=False,
@@ -20,7 +26,7 @@ SessionLocal = sessionmaker(
 Base = declarative_base()
 
 
-# Dependency for FastAPI
+# FastAPI Dependency
 def get_db():
     db = SessionLocal()
     try:

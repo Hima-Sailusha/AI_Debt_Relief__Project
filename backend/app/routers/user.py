@@ -16,12 +16,7 @@ router = APIRouter(
     prefix="/users",
     tags=["Users"]
 )
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+
 
 
 @router.post("/", response_model=UserResponse)
